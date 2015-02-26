@@ -13,8 +13,10 @@ ADD my.cnf /etc/mysql/conf.d/my.cnf
 ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
 
 # Add MySQL scripts
+ADD set_my_cnf_from_env.sh /set_my_cnf_from_env.sh
 ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
 ADD import_sql.sh /import_sql.sh
+ADD make_slave_of.sh /make_slave_of.sh
 ADD run.sh /run.sh
 RUN chmod 755 /*.sh
 
@@ -26,4 +28,5 @@ ENV MYSQL_PASS **Random**
 VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 
 EXPOSE 3306
+
 CMD ["/run.sh"]
