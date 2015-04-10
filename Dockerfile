@@ -11,6 +11,7 @@ RUN rm -rf /var/lib/mysql/*
 # Add MySQL configuration
 ADD my.cnf /etc/mysql/conf.d/my.cnf
 ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
+ADD mysqld_mode.cnf /etc/mysql/conf.d/mysqld_mode.cnf
 
 # Add MySQL scripts
 ADD set_my_cnf_from_env.sh /set_my_cnf_from_env.sh
